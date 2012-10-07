@@ -56,7 +56,7 @@ module NestedForm
     end
 
     def fields_for_nested_model(name, object, options, block)
-      dom_id = object.new_record? ? "" : "field_#{dom_id(object)}"
+      dom_id = object.new_record? ? "" : "field_#{@template.dom_id(object)}"
       @template.content_tag(:div, super, :class => 'fields', :id => dom_id)
     end
   end
